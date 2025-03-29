@@ -1,0 +1,105 @@
+<section id="projectGallery">
+    <div class="container">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <!-- Project cards will be added here -->
+        </div>
+    </div>
+</section>
+
+### 2. Project Card Design
+
+Each project will be represented by a card. These cards will contain an image, project title, short description, and a button to view more details.
+
+```html
+<article class="project-card">
+    <img src="project1.jpg" alt="Project 1" class="project-image">
+    <div class="project-info">
+        <h3>Project 1</h3>
+        <p>A brief description of the project goes here.</p>
+        <button class="view-more">View More</button>
+    </div>
+</article>
+<style>
+    .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    .project-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .project-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .project-info {
+        padding: 1.5rem;
+    }
+
+    .view-more {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .view-more:hover {
+        background: #0056b3;
+    }
+    @media (max-width: 768px) {
+        .project-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .project-card {
+            margin: 1rem 0;
+        }
+    }
+</style>
+<script>
+    document.querySelectorAll('.view-more').forEach(button => {
+        button.addEventListener('click', function() {
+            const projectCard = this.closest('.project-card');
+            const projectName = projectCard.querySelector('h3').textContent;
+            const projectImage = projectCard.querySelector('img').src;
+            const projectDescription = projectCard.querySelector('p').textContent;
+            
+            document.getElementById('modal-title').textContent = projectName;
+            document.getElementById('modal-image').src = projectImage;
+            document.getElementById('modal-description').textContent = projectDescription;
+            
+            document.getElementById('projectModal').style.display = 'block';
+        });
+    });
+
+    // Close modal when close button is clicked
+    document.querySelector('.close').addEventListener('click', function() {
+        document.getElementById('projectModal').style.display = 'none';
+    });
+
+    // Close modal when clicking outside the modal content
+    window.onclick = function(event) {
+        const modal = document.getElementById('projectModal');
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    }
+</script>

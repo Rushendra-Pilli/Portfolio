@@ -1,0 +1,171 @@
+<!-- About Me Section HTML Structure -->
+<section id="about" class="about-me-section">
+    <div class="section-container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-me-content">
+            <div class="profile-image">
+                <img src="https://external-preview.redd.it/94z1jqplipIvrv50SRI_8ag7z76u2YiaB9Igef5e--Q.jpg?auto=webp&s=53afafe7c10062fde7fe7fc156cbdfd330f6709c" alt="Pilli Rushendra" class="profile-pic">
+            </div>
+            <div class="about-text">
+                <p class="intro-text">
+                    Hi! I'm <span class="name-highlight">Pilli Rushendra</span>, a passionate 
+                    <span class="role-highlight">Web Developer</span> with expertise in 
+                    <span class="skill-highlight">front-end development</span> and creating beautiful 
+                    web experiences.
+                </p>
+                <div class="skills-list">
+                    <h3 class="skills-title">Areas of Expertise</h3>
+                    <ul class="skills-items">
+                        <li class="skill-item">HTML5</li>
+                        <li class="skill-item">CSS3</li>
+                        <li class="skill-item">JavaScript</li>
+                        <li class="skill-item">Responsive Design</li>
+                        <li class="skill-item">UI/UX</li>
+                    </ul>
+                </div>
+                <p class="about-paragraph">
+                    With over <span class="experience-highlight">2</span> years of experience, 
+                    I specialize in creating modern, responsive, and user-friendly websites 
+                    that combine technical excellence with engaging user experiences.
+                </p>
+                <div class="cta-button">
+                    <a href="https://www.overleaf.com/project/67cbc83f683a7da8613fa366" target="_blank" download class="btn">
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Me Section CSS Styling -->
+<style>
+.about-me-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.about-me-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.profile-image {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid #ddd;
+    object-fit: cover;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.name-highlight, 
+.role-highlight, 
+.skill-highlight {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.skills-list {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.skills-title {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.skills-items {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-item {
+    background: #f0f0f0;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.skill-item:hover {
+    color: darkcyan;
+    font-size: large;
+}
+
+.about-paragraph {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.experience-highlight {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+.cta-button {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #2980b9;
+}
+
+@media (max-width: 768px) {
+    .about-me-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+    }
+}
+</style>
