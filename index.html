@@ -3,115 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Document</title>
     <style>
-        * {
+        *{
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
         }
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-        header {
-            background: #ffffff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
+        nav {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            padding: 1.3rem;
+            background-color: #1F1F1F;
         }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #333;
-            text-decoration: none;
-        }
-        .nav-links {
-            list-style: none;
+        .nav_bar {
             display: flex;
+            justify-content: flex-end;
+            list-style-type: none;
         }
-        .nav-links li {
-            margin-left: 2rem;
-        }
-        .nav-links a {
+        .nav_bar a {
+            margin: 0.5rem;
             text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            color: white;
         }
-        .nav-links a:hover {
-            color: #007bff;
+        .main_footer{
+            padding: 1rem;
+            display: flex;
+            background-color: #121212;
+            color: white;
+            justify-content: space-around;
         }
-        .menu-toggle {
-            display: none;
-            background: none;
+        .foot {
+            margin: auto;
+            list-style-type: none;
+        }
+        .foot a {
+            text-decoration: none;
+            color: white;
+            margin: auto;
+        }
+        .foot li {
+            padding: 0.3rem;
+            margin: auto;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            font-size: 1.2rem;
+            color: white;
+        }
+        h3 {
+            text-align: center;
+            text-decoration: underline;
+            color: #3b75b3;
+            font-size: 1.3rem;
+            padding-bottom: 1rem;
+        }
+        .framee {
             border: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 70px;
-                right: 10px;
-                background: white;
-                width: 200px;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-                border-radius: 5px;
-                padding: 1rem;
-            }
-            .nav-links.show {
-                display: flex;
-            }
-            .nav-links li {
-                margin: 1rem 0;
-                text-align: center;
-            }
-            .menu-toggle {
-                display: block;
-            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="nav-container">
-            <a href="#" class="logo">Pilli Rushendra</a>
-            <ul class="nav-links">
-                <li><a href="./Home.html">Home</a></li>
-                <li><a href="./About Me.html">About</a></li>
-                <li><a href="./Projects.html">Projects</a></li>
-                <li><a href="./Skills.html">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+        <nav>
+            <p>Pilli Rushendra</p>
+            <ul class="nav_bar">
+                <li><a href="./Home.html" target="aframe">Home</a></li>
+                <li><a href="./About Me.html" target="aframe">About Me</a></li>
+                <li><a href="./Projects.html" target="aframe">Projects</a></li>
+                <li><a href="./Skills.html" target="aframe">Skills</a></li>
+                <li><a href="./Contact.html" target="aframe">Contact</a></li>
             </ul>
-            <button class="menu-toggle">☰</button>
-        </div>
+        </nav>
     </header>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuToggle = document.querySelector(".menu-toggle");
-            const navLinks = document.querySelector(".nav-links");
-
-            menuToggle.addEventListener("click", function () {
-                navLinks.classList.toggle("show");
-            });
-        });
-    </script>
+    <iframe class="framee" src="demo_iframe.html" name="aframe" height="1000px" width="100%" title="Empty"><h1>Welcome...</h1></iframe>
+    <footer>
+        <div class="main_footer">
+            <div>
+                <h3>About</h3>
+                <p>Pilli Rushendra</p>
+                <p>pillirushendra@gmail.com</p>
+                <p>+91 7842675352</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul class="foot">
+                    <li><a href="./Home.html" target="aframe">Home</a></li>
+                    <li><a href="./About Me.html" target="aframe">About Me</a></li>
+                    <li><a href="./Projects.html" target="aframe">Projects</a></li>
+                    <li><a href="./Skills.html" target="aframe">Skills</a></li>
+                    <li><a href="./Contact.html" target="aframe">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Follow Me</h3>
+                <ul class="foot">
+                    <li><a href="https://www.linkedin.com/in/pilli-rushendra-806322264/" target="_blank">Linked_IN</a></li>
+                    <li><a href="https://github.com/Rushendra-Pilli?tab=repositories" target="_blank">GIT HUB</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
