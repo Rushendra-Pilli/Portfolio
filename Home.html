@@ -3,9 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
+    <style>
+        body {
+            background: #12c2e9;
+            background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+            background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); 
+        }
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            margin-top: 5rem;
+        }
+        .div_button {
+           display: flex;
+           flex-direction: row;
+           margin: auto;
+           width: 50%;
+        }
+        button{
+            margin: 0 5rem;
+            font-size: large;
+            padding: 0.5rem 2rem;
+            border-radius: 10px;
+            width: 30%;
+            height: 10%;
+        }
+        p {
+            padding: 1rem;
+            font-size: large;
+        }
+        a {
+            text-decoration: none;
+            color: Black;
+        }
+        .b1 {
+            background-color: #1da7a4;
+        }
+        .b2 {
+            background-color: #cd4654;
+        }
+        
+    </style>
 </head>
 <body>
-    <h1>Home</h1>
+    <div>
+        <h1><b>Hi, I'm Pilli Rushendra</b></h1>
+        <p> I'm a passionate web developer creating beautiful and functional websites.
+            I specialize in front-end development with a focus on user experience.</p>
+        <div class="div_button">
+            <button class="b1"><a href="./About Me.html">Know More</a></button>
+            <button class="b2"><a href="./Contact.html">Contact</a></button>
+        </div>
+    </div>
 </body>
 </html>
