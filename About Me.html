@@ -13,7 +13,7 @@
             background: #83a4d4;
             background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);
             background: linear-gradient(to right, #b6fbff, #83a4d4);
-
+            background-repeat: no-repeat;
             font-family: "Poppins", sans-serif;
 
         }
@@ -63,7 +63,7 @@
             border-radius: 10px;
             border-color: black;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 0 1.5rem;
+            padding: 0 50px;
             margin: 50px;
         }
 
@@ -116,6 +116,60 @@
 
         .download-btn:hover {
             background-color: #45a049;
+        }
+
+        @media (max-width:940px) {
+            .skill_section {
+                width: 100%;
+                list-style-type: none;
+                display: inline-grid;
+                grid-template-columns: 1fr 1fr;
+                justify-content: left;
+                justify-items: center;
+                padding: 0;
+            }
+        }
+
+        @media (max-width:768px) {
+            img {
+                display: flex;
+                justify-content: center;
+                width: 200px;
+                height: 200px;
+                margin: 0 auto;
+                border-radius: 50%;
+                border: 5px solid black;
+                box-shadow: 5px 9px 11px rgba(0, 0, 0, 0.1);
+            }
+
+            .skill_main {
+
+                border: 2px solid black;
+                border-radius: 10px;
+                border-color: black;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                padding: 0 10px;
+                margin: 10px;
+            }
+
+            .skill_section {
+                width: 100%;
+                list-style-type: none;
+                display: inline-grid;
+                grid-template-columns: 1fr;
+                justify-content: left;
+                justify-items: center;
+                padding: 0;
+            }
+
+            .resume {
+                display: block;
+                margin: 20px 0;
+            }
+
+            .download-btn {
+                margin: 20px;
+            }
         }
     </style>
 </head>

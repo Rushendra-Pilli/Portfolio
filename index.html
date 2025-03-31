@@ -14,7 +14,8 @@
             padding: 0;
             font-family: "Poppins", sans-serif;
         }
-        body{
+
+        body {
             overflow: scroll;
         }
 
@@ -36,10 +37,12 @@
             text-decoration: none;
             color: white;
         }
+
         .nav_bar a:hover {
             color: #80d78c;
             font-size: 1.1rem;
         }
+
         .main_footer {
             padding: 1rem;
             display: flex;
@@ -90,7 +93,49 @@
 
         .framee {
             border: none;
-            overflow: hidden;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width:768px) {
+            .nav_bar {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 10px;
+                background: #1F1F1F;
+                width: 200px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                border-radius: 5px;
+            }
+
+            .nav_bar.show {
+                display: flex;
+            }
+
+            .nav_bar li {
+                margin: 1rem;
+                text-align: center;
+            }
+
+            .menu-toggle {
+                display: block;
+                background-color: white;
+                padding: 2px;
+                border-radius: 2px;
+            }
+
+            .main_footer {
+                display: flex;
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -105,9 +150,10 @@
                 <li><a href="./Projects.html" target="aframe">Projects</a></li>
                 <li><a href="./Contact.html" target="aframe">Contact</a></li>
             </ul>
+            <button class="menu-toggle">☰</button>
         </nav>
     </header>
-    <iframe class="framee" src="./Home.html" name="aframe" height="700px" width="100%" title="Empty">
+    <iframe class="framee" src="./Home.html" name="aframe" height="620px" width="100%" title="Empty">
         <h1>Welcome...</h1>
     </iframe>
     <footer>
@@ -130,7 +176,8 @@
             <div>
                 <h3>Follow Me</h3>
                 <ul class="foot">
-                    <li><a href="https://www.linkedin.com/in/pilli-rushendra-806322264/" target="_blank">Linked_In</a></li>
+                    <li><a href="https://www.linkedin.com/in/pilli-rushendra-806322264/" target="_blank">Linked_In</a>
+                    </li>
                     <li><a href="https://github.com/Rushendra-Pilli?tab=repositories" target="_blank">GIT HUB</a></li>
                 </ul>
             </div>
@@ -147,6 +194,16 @@
             <p class="copyr">&copy; 2025 Pilli Rushendra. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector(".nav_bar");
+
+            menuToggle.addEventListener("click", function () {
+                navLinks.classList.toggle("show");
+            });
+        });
+    </script>
 </body>
 
 </html>
