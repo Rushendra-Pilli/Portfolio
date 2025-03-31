@@ -1,46 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        body {
+            background: #83a4d4;
+            background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);
+            background: linear-gradient(to right, #b6fbff, #83a4d4);
+
+            font-family: "Poppins", sans-serif;
+
+        }
+
+        main {
+            width: 75%;
+            margin: auto;
+            padding: 20px;
+        }
+
         img {
             display: flex;
             justify-content: center;
-            width: 100%;
-            max-width: 300px;
+            width: 300px;
+            height: 300px;
             margin: 0 auto;
             border-radius: 50%;
-            border: 5px solid #fff;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border: 5px solid black;
+            box-shadow: 5px 9px 11px rgba(0, 0, 0, 0.1);
+        }
+
+        .resume {
+            display: inline;
+        }
+
+        p {
+            display: flex;
+            justify-content: center;
+            padding: 2px 20px;
+            font-size: x-large;
+            font-weight: bolder;
+            text-shadow: 1px 1px #b6fbff;
+            color: #494343;
+        }
+
+        h3 {
+            display: flex;
+            justify-content: center;
+            font-size: xx-large;
+            text-decoration: underline;
+            color: #121518;
+        }
+
+        .skill_main {
+
+            border: 2px solid black;
+            border-radius: 10px;
+            border-color: black;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 0 1.5rem;
+            margin: 50px;
+        }
+
+        .skill_section {
+            width: 100%;
+            list-style-type: none;
+            display: inline-grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            justify-content: left;
+            justify-items: center;
+            padding: 0;
+        }
+
+        .skill_section li {
+            background-color: #15aa96;
+            border: 2px solid black;
+            border-radius: 10px;
+            border-color: black;
+            box-shadow: 0px 4px 6px rgba(54, 208, 142, 0.1);
+            width: 50%;
+            padding: 1rem;
+            text-align: center;
+            margin: 0.5rem;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .skill_section li:hover {
+            transform: scale(1.2);
+            background-color: #4b9dd7;
+        }
+
+        #element1 {
+            font-size: xx-large;
+        }
+
+        #element2 {
+            font-size: x-large;
+        }
+
+        .download-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .download-btn:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
+
 <body>
-    <div>
+    <main>
         <div class="image">
-            <img src="https://www.greenscene.co.id/wp-content/uploads/2021/01/Goku-2-696x497.jpg" alt="Pilli Rushendra"/>
+            <img src="./photowhatsapp.jpg" alt="Pilli Rushendra" />
         </div>
         <div>
             <h3>About Me</h3>
-            <h3>Full Stack Developer & DSA Enthusiast</h3>
-            <p><b>Name : </b>Pilli Rushendra</p>
-            <p><b>Email : </b>pillirushendra@gmail.com</p>
-            <p><b>Address : </b>Nizamabad, Telangana, India</p>
+            <p id="element1"></p>
+            <p id="element2"></p>
         </div>
         <div>
-            <div>
-                <h4>Core Skills</h4>
-                <ul>
+            <div class="skill_main">
+                <h3>Core Skills</h3>
+                <ul class="skill_section">
                     <li>JavaScript</li>
                     <li>React</li>
                     <li>Node.js</li>
                     <li>HTML5</li>
                     <li>CSS3</li>
+                    <li>Python</li>
+                    <li>C++</li>
+                    <li>MongoDB</li>
+                    <li>Java</li>
+                    <li>Bootstrap</li>
                 </ul>
             </div>
         </div>
-    </div>
+        <p class="resume">Resume : </p>
+        <a href="./Rushendra_Resume (2).pdf" download="Resume_Pilli_Rushendra.pdf" class="download-btn">
+            Download
+        </a>
+    </main>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element1', {
+            strings: ['Pilli Rushendra'],
+            typeSpeed: 50,
+            showCursor: false
+        });
+        var typed = new Typed('#element2', {
+            strings: ['I\'m a passionate full-stack developer, creating beautiful web applications. '],
+            typeSpeed: 50,
+            showCursor: false
+        });
+    </script>
 </body>
+
 </html>

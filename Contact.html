@@ -3,9 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact Form</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f4f8;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            padding-right: 45px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .contact-form h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Contact</h1>
+    <div class="contact-form">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            <span id="nameError" class="error"></span>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <span id="emailError" class="error"></span>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <span id="messageError" class="error"></span>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <script>
+        
+        (function () {
+            emailjs.init({
+                publicKey: "E-O7LiDvUPin41c4s"
+            }); 
+        })();
+
+        function validateForm(event) {
+            event.preventDefault();
+
+            let isValid = true;
+            document.getElementById("nameError").textContent = "";
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("messageError").textContent = "";
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+            if (name === "") {
+                document.getElementById("nameError").textContent = "Name is required.";
+                isValid = false;
+            }
+            if (email === "") {
+                document.getElementById("emailError").textContent = "Email is required.";
+                isValid = false;
+            } else if (!emailPattern.test(email)) {
+                document.getElementById("emailError").textContent = "Please enter a valid Gmail address.";
+                isValid = false;
+            }
+            if (message === "") {
+                document.getElementById("messageError").textContent = "Message is required.";
+                isValid = false;
+            }
+
+            if (isValid) {
+                sendEmail(name, email, message);
+            }
+        }
+
+        function sendEmail(name, email, message) {
+            emailjs.send("service_id8p2k3", "template_f8knz49", {
+                name: name,
+                email: email,
+                message: message
+            }).then(response => response.text() )
+                .then(data => {
+                    console.log("Response:", data);
+                    alert("Your message has been sent successfully!");
+                    document.getElementById("contactForm").reset();
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("Oops! Something went wrong.");
+                });
+        }
+
+        document.getElementById("contactForm").addEventListener("submit", validateForm);
+    </script>
 </body>
+
 </html>

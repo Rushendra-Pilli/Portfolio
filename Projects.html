@@ -1,11 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Projects Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #F2F2F2;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .projects-container {
+            display: block;
+            justify-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 75%;
+            margin: 20px auto;
+            text-align: justify;
+        }
+
+        .project-card h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .project-card button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .project-card button:hover {
+            background: #0056b3;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            width: 400px;
+            text-align: justify;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #555;
+        }
+
+        .close-btn:hover {
+            color: black;
+        }
+
+        .github-link {
+            display: none;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: #24292e;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .github-link:hover {
+            background: #333;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Projects</h1>
+
+    <h1>My Projects</h1>
+    <div class="projects-container">
+        <div class="project-card">
+            <h3>Language Translation with speech recognition in Python</h3>
+            <p>Developed a language recognition and translation system using Python, integrating googletrans, Google
+                Cloud
+                Speech Library, and pyaudio.</p>
+            <button onclick="openModal('Language Translation with speech recognition in Python', '•   Developed a language recognition and translation system using Python, integrating googletrans, Google Cloud Speech Library, and pyaudio.\n •   Enabled real-time speech recognition and translation for over 75 languages with minimal latency.\n •   Optimized system performance to ensure fast and accurate translations for seamless user experience.', 'https:/\/github.com/Rushendra-Pilli?tab=repositories')">
+                View More
+            </button>
+        </div>
+
+        <div class="project-card">
+            <h3>Faculty Skill Enhancement Activity Tracker</h3>
+            <p>Spearheaded a transformative project within the CSE department.</p>
+            <button
+                onclick="openModal('Faculty Skill Enhancement Activity Tracker', '•   Spearheaded a transformative project within the CSE department.\n •    Streamlined faculty skill tracking and reporting, reducing manual administrative work.\n •    Achieved time savings of 10 hours per month by automating reporting processes.', 'https:/\/github.com/Rushendra-Pilli?tab=repositories')">
+                View More
+            </button>
+        </div>
+
+        <div class="project-card">
+            <h3>Blog Application(MERN Stack)</h3>
+            <p>Developed a full-stack blog application using the MERN stack (MongoDB, Express.js, React, Node.js) for
+                creating, editing, and deleting blog posts.
+                </p>
+            <button
+                onclick="openModal('Blog Application(MERN Stack)', '•    Developed a full-stack blog application using the MERN stack (MongoDB, Express.js, React, Node.js) for creating, editing, and deleting blog posts.\n •    Designed and implemented a seamless and responsive user interface with React.\n •    Built RESTful APIs with Express.js and Node.js, integrating MongoDB for data storage.', 'https:/\/github.com/Rushendra-Pilli?tab=repositories')">
+                View More
+            </button>
+        </div>
+        
+    </div>
+
+    <!-- Modal Popup -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <a id="github-link" class="github-link" target="_blank">View on GitHub</a>
+        </div>
+    </div>
+
+    <script>
+        function openModal(title, description, githubLink) {
+            document.getElementById("modal-title").innerText = title;
+            document.getElementById("modal-description").innerText = description;
+
+            let githubLinkElement = document.getElementById("github-link");
+            githubLinkElement.href = githubLink;
+
+            githubLinkElement.style.display = "inline-block";
+
+            document.getElementById("modal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            let modal = document.getElementById("modal");
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+
 </body>
+
 </html>

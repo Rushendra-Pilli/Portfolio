@@ -1,62 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             background: #12c2e9;
             background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
-            background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); 
+            background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+            font-family: "Poppins", sans-serif;
         }
-        div {
+
+        main {
             display: flex;
             flex-direction: column;
             justify-content: center;
             text-align: center;
-            margin-top: 5rem;
+            margin-top: 150px;
         }
+
         .div_button {
-           display: flex;
-           flex-direction: row;
-           margin: auto;
-           width: 50%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin: auto;
+            width: 50%;
         }
-        button{
-            margin: 0 5rem;
+
+        button {
+            margin: 70px;
             font-size: large;
-            padding: 0.5rem 2rem;
+            padding: 5px 20px;
             border-radius: 10px;
-            width: 30%;
-            height: 10%;
+            width: 150px;
+            height: 60px;
         }
-        p {
-            padding: 1rem;
-            font-size: large;
-        }
+
         a {
             text-decoration: none;
             color: Black;
         }
+
+        h1 {
+            margin: 0px;
+        }
+
         .b1 {
             background-color: #1da7a4;
+            transition: transform 0.3s ease-in-out;
         }
+
+        .b1:hover,
+        .b2:hover {
+            transform: scale(1.2);
+        }
+
         .b2 {
             background-color: #cd4654;
+            transition: transform 0.3s ease-in-out;
         }
-        
+
+        #element {
+            color: #060d5a;
+        }
     </style>
 </head>
+
 <body>
-    <div>
-        <h1><b>Hi, I'm Pilli Rushendra</b></h1>
-        <p> I'm a passionate web developer creating beautiful and functional websites.
-            I specialize in front-end development with a focus on user experience.</p>
+    <main>
+        <h1>Hi, I'm Pilli Rushendra</h1>
+        <h1> I'm a passionate </h1>
+        <h1 id="element"></h1>
         <div class="div_button">
-            <button class="b1"><a href="./About Me.html">Know More</a></button>
-            <button class="b2"><a href="./Contact.html">Contact</a></button>
+            <a href="./About Me.html"><button class="b1">Know More</button></a>
+            <a href="./Contact.html"><button class="b2">Contact</button></a>
         </div>
-    </div>
+    </main>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'DSA Enthusiast', 'Competitive Programmer'],
+            typeSpeed: 50,
+            showCursor: false
+        });
+    </script>
 </body>
+
 </html>
